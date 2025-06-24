@@ -9,7 +9,7 @@ from pydantic import BaseModel
 router = APIRouter()
 DATA_FILE = "data/seating_data.json"
 
-# ----------- DATA MODELS -----------
+# Data Models
 class Seat(BaseModel):
     id: str
     guest: Optional[str] = None
@@ -26,7 +26,7 @@ class TableData(BaseModel):
     seatCount: int
     seats: List[Seat]
 
-# ----------- DATA MODELS -----------
+# Functions
 def load_data():
     if os.path.exists(DATA_FILE):
         with open(DATA_FILE, "r") as f:
@@ -37,15 +37,19 @@ def save_data(data):
     with open(DATA_FILE, "w") as f:
         json.dump(data, f, indent=2)
 
+# Routes
+# GET: Retrieve saved seating chart
 @router.get("/seating")
 def get_seating():
     return load_data()
 
+# POST: Save seating chart
 @router.post("/seating")
 def save_seating(tables: List[TableData]):
     save_data([table.dict() for table in tables])
     return {"message": "Seating saved successfully."}
 
+# DELETE: delete seating chart
 @router.delete("/seating")
 def reset_seating():
     save_data([])
