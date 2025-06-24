@@ -8,15 +8,16 @@ from routes import auto_seating
 
 app = FastAPI()
 
-# 👇 CORS CONFIGURATION (IMPORTANT)
+# CORS config
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # or use ["*"] during local dev
+    allow_origins=["http://localhost:3000"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
+# Call routes
 app.include_router(guest_list.router, prefix="/api")
 app.include_router(table_calculator.router, prefix="/api")
 app.include_router(seating_chart.router, prefix="/api")
