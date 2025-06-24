@@ -1,4 +1,4 @@
-# Wedding Planner Application
+# Wedding Planner Web Based Application
 
 # Wedding Seating Chart App
 
