@@ -41,7 +41,7 @@ def save_guest_list(payload: GuestListPayload):
     save_guests(updated_guests)
     return {"message": "Guests saved", "guests": updated_guests}
     
-# Get: guest list
+# Get: Retrieve guest list
 @router.get("/guests")
 def get_guest_list():
     return load_guests()
