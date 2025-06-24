@@ -33,7 +33,7 @@ An interactive wedding seating chart planner built with React, React-Konva, and 
 - cd /path/to/backend
 - python -m venv venv
 - --source venv/bin/activate  # or venv\Scripts\activate on Windows
-- - pip install -r requirements.txt
+- pip install -r requirements.txt
 - uvicorn main:app --reload
 
 ### Frontend 
