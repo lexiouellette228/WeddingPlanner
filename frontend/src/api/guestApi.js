@@ -3,8 +3,7 @@ import axios from 'axios';
 const BASE_URL = 'http://localhost:8000/api';
 
 export const saveGuestList = async (guests) => {
-    const res = await axios.post(`${BASE_URL}/guests`, { guests }); // wrap in object!
-    return res.data;
+    const res = await axios.post(`${BASE_URL}/guests`, { guests });
   };
 
 export const getGuestList = async () => {
