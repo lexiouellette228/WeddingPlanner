@@ -1,0 +1,51 @@
+.floorplan-wrapper {
+    height: 100vh;
+    width: 93vw;
+    display: flex;
+  }
+  
+  .floorplan-sidebar {
+    width: 30vw; 
+    height: 250vw;
+    padding: 15px;
+    background-color: #f6eaf0;
+    border-right: 2px solid hotpink;
+    border-left: 2px solid hotpink;
+    border-top: 2px solid hotpink;
+    border-bottom: 2px solid hotpink;
+  }
+  
+  .h6 {
+    color: black;
+    border: none;
+    font-size: 1.0rem;
+    font-weight: Bold;
+    transition: transform 0.2s;
+    text-decoration: underline;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  .table-options {
+    color: black;
+    border: none;
+    font-size: 1.0rem;
+    font-weight: normal;
+    transition: transform 0.2s;
+    text-decoration: underline;
+    text-align: center;
+  }
+
+  .guest-name {
+    color: black;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: normal;
+    transition: transform 0.2s;
+    text-align: center;
+  }
+
+
+  .container-size {
+    padding: 10px;
+  }

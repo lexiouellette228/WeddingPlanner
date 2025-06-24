@@ -1,0 +1,35 @@
+/* GuestItem.css */
+.tr {
+    transition: background-color 0.2s ease;
+  }
+
+.sidebar {
+    width: flex; 
+    height: flex;
+    padding: 12px;
+    background-color: #ffffff;
+    
+    border-left: 2px solid hotpink;
+    border-top: 2px solid hotpink;
+    border-bottom: 2px solid hotpink;
+}
+
+.floorplan-area {
+    width: flex; 
+    height: flex;
+    padding: 12px;
+    background-color: #ffffff;
+    border-right: 2px solid hotpink;
+   
+    border-top: 2px solid hotpink;
+    border-bottom: 2px solid hotpink;
+}
+
+.seat {
+    padding: 2px 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: inline-block;
+    margin: 2px;
+  }
+  

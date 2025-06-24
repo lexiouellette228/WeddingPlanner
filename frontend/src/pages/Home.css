@@ -1,0 +1,40 @@
+.home-container {
+    height: 100vh;
+    background-color: #fff0f6;
+  }
+  
+  .button-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .home-btn {
+    background-color: hotpink;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    border-radius: 8px;
+    min-width: 200px;
+    transition: transform 0.2s;
+  }
+  
+  .home-btn:hover {
+    transform: scale(1.05);
+    background-color: deeppink;
+  }
+  
+  .manual-btn {
+    background-color: hotpink;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    border-radius: 8px;
+    min-width: 200px;
+    transition: transform 0.2s;
+  }
