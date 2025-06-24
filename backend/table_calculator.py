@@ -1,10 +1,5 @@
-# a simple program to calculate how many are tables needed based on guest count
-# the program will ask for total guest count, show how many tables are needed (min and max), 
-# show leftover seats if not divisible, and output options are clearly grouped
-# the program will also show a mixture of round and rectangle tables
 import math
 
-# Define table types
 round_tables = [
     {"name": '30" Round', "seatsMin": 2, "seatsMax": 3},
     {"name": '48" Round', "seatsMin": 6, "seatsMax": 8},
@@ -17,7 +12,6 @@ rectangle_tables = [
     {"name": "8' Rectangle", "seatsMin": 8, "seatsMax": 10},
 ]
 
-# Pure min/max table suggestion for each type
 def calculate_table_options(guest_count):
     results = []
 
@@ -37,7 +31,6 @@ def calculate_table_options(guest_count):
 
     return results
 
-# 🔄 Round + Rectangle combinations that meet the guest count
 def mixed_table_combinations(guest_count):
     combinations = []
 
