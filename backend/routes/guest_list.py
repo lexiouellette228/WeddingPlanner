@@ -30,7 +30,7 @@ def save_guests(guests):
 class GuestListPayload(BaseModel):
     guests: List[Guest]
 
-# ✅ POST - Save full guest list
+# Post: Save full guest list
 @router.post("/guests")
 def save_guest_list(payload: GuestListPayload):
     updated_guests = []
@@ -41,12 +41,12 @@ def save_guest_list(payload: GuestListPayload):
     save_guests(updated_guests)
     return {"message": "Guests saved", "guests": updated_guests}
     
-# Get guest list
+# Get: guest list
 @router.get("/guests")
 def get_guest_list():
     return load_guests()
 
-# Update a guest
+# Put: Update a guest
 @router.put("/guests/{guest_id}")
 def update_guest(guest_id: str, updated_guest: Guest):
     guests = load_guests()
@@ -62,7 +62,7 @@ def update_guest(guest_id: str, updated_guest: Guest):
     raise HTTPException(status_code=404, detail="Guest not found")
 
 
-# Remove a guest
+# Delete: Remove a guest
 @router.delete("/guests/{guest_id}")
 def delete_guest(guest_id: str):
     guests = load_guests()
@@ -72,6 +72,7 @@ def delete_guest(guest_id: str):
     save_guests(updated)
     return {"message": "Guest deleted"}
 
+# Delete: Remove all guests
 @router.delete("/guests/clear")
 def clear_guest_list():
     try:
