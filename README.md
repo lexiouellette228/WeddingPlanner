@@ -1,4 +1,4 @@
-# WeddingPlanner
+# Wedding Planner Application
 
 # Wedding Seating Chart App
 
