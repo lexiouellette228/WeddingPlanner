@@ -20,6 +20,7 @@ class SeatingRequest(BaseModel):
     seats_per_table: int
     shape: Optional[Literal["round", "rectangle"]] = "round"
 
+# Post: save generated chart
 @router.post("/auto-generate")
 def auto_generate_seating(request: SeatingRequest):
     try:
@@ -38,16 +39,16 @@ def auto_generate_seating(request: SeatingRequest):
             "tables": tables  # <- must be a list of dicts
         }
     except Exception as e:
-        print("⚠️ AUTO-GENERATE ERROR:", e)
+        print("AUTO GENERATE ERROR:", e)
         raise HTTPException(status_code=500, detail=str(e))
 
-
-
+# Post: Save chart to file 
 @router.post("/save-auto")
 def save_seating(tables: List[dict]):
     save_auto_chart(tables)
     return {"message": "Seating chart saved."}
 
+# Get: retrieve saved list
 @router.get("/load-auto-chart")
 def get_auto_chart():
     tables = load_auto_chart()
