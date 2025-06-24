@@ -14,10 +14,11 @@ if not os.path.exists(SELECTED_LAYOUT):
     with open(GUESTS_FILE, "w") as f:
         json.dump([], f)
 
+# Data Models
 class GuestCount(BaseModel):
     count: int
 
-# Table config (same as before)
+# Table config
 table_options = {
     "round": [
         {"name": '30" Round', "seatsMin": 2, "seatsMax": 3}, 
@@ -31,6 +32,8 @@ table_options = {
     ]
 }
 
+# Routes
+# POST: Calculate round or rectangle tables based on guest count and return the result 
 @router.post("/calculate-tables")
 def get_table_options(data: GuestCount):
     guest_count = data.count
@@ -49,6 +52,7 @@ def get_table_options(data: GuestCount):
 
     return result
 
+# POST: Calculate round and rectangle tables based on guest count and return the result 
 @router.post("/calculate-mixed")
 def get_mixed_combinations(data: GuestCount):
     guest_count = data.count
@@ -80,12 +84,14 @@ def get_mixed_combinations(data: GuestCount):
     combinations.sort(key=lambda x: x["total_tables"])
     return {"combinations": combinations[:20]}
 
+# POST: Save selected layout 
 @router.post("/save-layout")
 def save_selected_layout(layout: dict):
     with open("data/selected_layout.json", "w") as f:
         json.dump(layout.get("tables", []), f)  # Save only the list of tables
     return {"message": "Layout saved"}
 
+# GET: Retrieve selected layout 
 @router.get("/load-layout")
 def load_selected_layout():
     try:
